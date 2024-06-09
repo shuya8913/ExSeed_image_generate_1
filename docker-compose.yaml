@@ -1,0 +1,12 @@
+services:
+  exseed_demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./dev/:/root/dev
+    tty: true
+    ports:
+      - "7860:7860"
