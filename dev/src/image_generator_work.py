@@ -26,9 +26,7 @@ class ImageGenerator:
             model_id (str): 使用するStable DiffusionモデルのID。今回は"CompVis/stable-diffusion-v1-4"を使用
             device (str): モデルを実行するデバイス。Noneの場合、自動的に 'cuda' が利用可能かどうかを判断します。
         """
-        self.device = device if device else ("cuda" if torch.cuda.is_available() else "cpu")
-        self.model_id = model_id
-        self.pipeline = self._load_model()
+        
 
     def _load_model(self) -> StableDiffusionPipeline:
         """
@@ -39,8 +37,7 @@ class ImageGenerator:
         Returns:
             StableDiffusionPipeline: テキストから画像を生成するためのパイプライン。
         """
-        pipeline = StableDiffusionPipeline.from_pretrained(self.model_id)
-        pipeline.to(self.device)
+       
         return pipeline
 
     def generate_image(self, prompt: str,num_inference_steps: int = 30) -> Image.Image:
