@@ -14,7 +14,7 @@ class ImageGenerator:
         device (str): モデルを実行するデバイス（例: 'cuda' または 'cpu'）。
         pipeline (StableDiffusionPipeline): テキストから画像を生成するためのパイプライン。
     """
-    def __init__(self, model_id: str = "CompVis/stable-diffusion-v1-4", device: str = None):
+    def __init__(self, model_id: str = "CompVis/stable-diffusion-v1-4", device: str = "cpu"):
         """
         指定されたモデルとデバイスでImageGeneratorを初期化します。
         書いてもらいたいコード
@@ -24,7 +24,7 @@ class ImageGenerator:
         
         Args:
             model_id (str): 使用するStable DiffusionモデルのID。今回は"CompVis/stable-diffusion-v1-4"を使用
-            device (str): モデルを実行するデバイス。Noneの場合、自動的に 'cuda' が利用可能かどうかを判断します。
+            device (str): モデルを実行するデバイス。デフォルトはcpu。
         """
         
 
