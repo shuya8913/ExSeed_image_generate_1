@@ -18,7 +18,7 @@ class ImageGenerator:
         """
         指定されたモデルとデバイスでImageGeneratorを初期化します。
         書いてもらいたいコード
-        ①deviceの設定(基本的にcpuだが、自分のデバイスを使いたい人はそちらを使ってもかまわない)
+        ①deviceの設定(基本的にcpuだが、nvidiaのGPUを持っている人はcudaを指定)
         ②model_idの設定
         ③pipelineの設定
         
