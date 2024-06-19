@@ -51,6 +51,7 @@ class ImageGenerator:
         Returns:
             Image.Image: 生成された画像。
         """
+        print("画像生成中...")
         return self.pipeline(prompt,num_inference_steps=num_inference_steps).images[0]
 
     def save_image(self, image: Image.Image, filepath: str) -> None:
